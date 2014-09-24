@@ -212,6 +212,7 @@ Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-fugitive'
 Plug 'bling/vim-airline'
 Plug 'Lokaltog/vim-easymotion'
+" Plug 'vim-scripts/a.vim'
 
 call plug#end()
 
