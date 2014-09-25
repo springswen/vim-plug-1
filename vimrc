@@ -213,6 +213,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'bling/vim-airline'
 Plug 'Lokaltog/vim-easymotion'
 " Plug 'vim-scripts/a.vim'
+" Plug 'kana/vim-textobj-entire' " Entire file as a text object
 
 call plug#end()
 
@@ -322,7 +323,7 @@ noremap <leader>a :Ag
 noremap <leader>t :TlistToggle<CR>
 
 " Sudo this file if opened without root priveileges
-noremap sudo!! w !sudo tee % >/dev/null
+noremap su <Esc>:w !sudo tee % >/dev/null<CR>
 
 "For Fixing whitespace
 noremap <leader>fw :FixWhitespace<CR>
