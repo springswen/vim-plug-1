@@ -175,6 +175,9 @@ set wildignore=*.o,*~,*.pyc
 set autoindent "Auto indent
 set smartindent "Smart indent
 
+"Adding omnicomplete
+set ofu=syntaxcomplete#Complete
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Status line
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -191,7 +194,7 @@ set statusline=\ FILE:\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h
 set cmdheight=1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Plugin Specific
+" => Plugins Specific
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vim-plug
 call plug#begin('~/.vim/plugged')
@@ -214,17 +217,22 @@ Plug 'bling/vim-airline'
 Plug 'Lokaltog/vim-easymotion'
 " Plug 'vim-scripts/a.vim'
 " Plug 'kana/vim-textobj-entire' " Entire file as a text object
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
 
 call plug#end()
 
-"Adding omnicomplete
-set ofu=syntaxcomplete#Complete
+" Ack
+"""""""""""""
+noremap <leader>a :Ag
 
-" Ctrl.p
-set runtimepath^=~/.vim/bundle/ctrlp.vim
-
-" For supertab
+" Supertab
+"""""""""""""
 let g:SuperTabDefaultCompletionType="context"
+
+" Ctrl.P
+"""""""""""""
+set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 " Ctrl P on the top rather than bottom
 let g:ctrlp_match_window_bottom = 0
@@ -232,14 +240,16 @@ let g:ctrlp_working_path_mode = 2 " Smart path mode
 let g:ctrlp_mru_files = 1 " Enable Most Recently Used files feature
 let g:ctrlp_jump_to_buffer = 2 " Jump to tab AND buffer if already open
 
-" Ultisnips configuration
+" Ultisnips
+"""""""""""""
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<c-k>"
 let g:UltiSnipsJumpForwardTrigger="<c-)>"
 let g:UltiSnipsJumpBackwardTrigger="<c-(>"
 let g:UltiSnipsEditSplit="vertical"
 
-" YCM shortcuts
+" YCM
+"""""""""""""
 " let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
 noremap <leader>o :YcmCompleter GoToDefinition<CR>
 noremap <leader>c :YcmDiags<CR>
@@ -247,15 +257,35 @@ let g:ycm_confirm_extra_conf = 0
 let g:ycm_collect_identifiers_from_tags_file = 1
 
 " Emmet
+"""""""""""""
 let g:user_emmet_leader_key='<c-e>'
 let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstall
 
-" airline
+" Airline
+"""""""""""""
 let g:airline_powerline_fonts = 1
 
 " NERDTree
+"""""""""""""
 noremap <C-n> :NERDTreeToggle<CR>
+
+" Limelight
+"""""""""""""
+" Color name (:help cterm-colors) or ANSI code
+let g:limelight_conceal_ctermfg = 'gray'
+let g:limelight_conceal_ctermfg = 240
+
+" Color name (:help gui-colors) or RGB color
+let g:limelight_conceal_guifg = 'DarkGray'
+let g:limelight_conceal_guifg = '#777777'
+
+" Default: 0.5
+let g:limelight_default_coefficient = 0.7
+
+" Goyo integration for limelight
+autocmd User GoyoEnter Limelight
+autocmd User GoyoLeave Limelight!
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "=> My precious
@@ -263,7 +293,6 @@ noremap <C-n> :NERDTreeToggle<CR>
 
 " File based
 """""""""""""""
-
 " For JSON files pretty print them
 noremap <leader>pp :%!python -m json.tool<CR>
 
@@ -289,7 +318,6 @@ endif
 
 " Utilities
 """""""""""""""
-
 " after a search, this mapping removes the highlighing
 nnoremap <silent> <leader>/ :nohlsearch<CR>
 
@@ -314,22 +342,10 @@ function! HasPaste()
     return ''
 endfunction
 
-" Plugin Keybindings
-"""""""""""""""""""""""""
-" For ack
-noremap <leader>a :Ag
-
-" For ack
-noremap <leader>t :TlistToggle<CR>
-
-" Sudo this file if opened without root priveileges
-noremap su <Esc>:w !sudo tee % >/dev/null<CR>
-
-"For Fixing whitespace
+" Fixing whitespace
 noremap <leader>fw :FixWhitespace<CR>
 
-" strips trailing whitespace at the end of files. this
-" is called on buffer write in the autogroup above.
+" strips trailing whitespace at the end of files
 function! <SID>StripTrailingWhitespaces()
     " save last search & cursor position
     let _s=@/
@@ -340,9 +356,11 @@ function! <SID>StripTrailingWhitespaces()
     call cursor(l, c)
 endfunction
 
+" Sudo this file if opened without root priveileges
+noremap su <Esc>:w !sudo tee % >/dev/null<CR>
+
 " Miscellaneous
 """"""""""""""""
-
 " allows cursor change in tmux mode
 if exists('$TMUX')
     let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
@@ -354,7 +372,6 @@ endif
 
 " Autorun Commands
 """""""""""""""""""
-
 " Search for any .vimsettings files in the path to the file.
 " Source them if you find them.
 function! ApplyLocalSettings(dirname)
@@ -392,8 +409,8 @@ augroup configgroup
     " autocmd FileType java setlocal noexpandtab
 
     " Strip Trailing Whitespace
-    autocmd BufWritePre *.php,*.py,*.js,*.txt,*.hs,*.java,*.md,*.html
-                    \:call FixWhitespace
+    " autocmd BufWritePre *.php,*.py,*.js,*.txt,*.hs,*.java,*.md,*.html
+    "                 \:call FixWhitespace
 
     " Return to last edit position when opening files (You want this!)
     autocmd BufReadPost *
