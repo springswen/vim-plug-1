@@ -219,6 +219,7 @@ Plug 'Lokaltog/vim-easymotion'
 " Plug 'kana/vim-textobj-entire' " Entire file as a text object
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
+Plug 'ledger/vim-ledger'
 
 call plug#end()
 
@@ -286,6 +287,10 @@ let g:limelight_default_coefficient = 0.7
 " Goyo integration for limelight
 autocmd User GoyoEnter Limelight
 autocmd User GoyoLeave Limelight!
+
+" Ledger
+""""""""
+noremap <leader>d :r !date +\%Y/\%m/\%d<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "=> My precious
