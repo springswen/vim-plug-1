@@ -332,8 +332,7 @@ noremap <silent> <leader>w :set list!<CR>
 " Highlight the last selected text area
 noremap <leader>h '[v']<CR>
 
-" Paste toggle (,p)
-"set pastetoggle=<leader>p
+" Paste toggle <leader>p
 noremap <leader>p :set invpaste paste?<CR>
 
 " Paste from clipboard
@@ -349,17 +348,6 @@ endfunction
 
 " Fixing whitespace
 noremap <leader>fw :FixWhitespace<CR>
-
-" strips trailing whitespace at the end of files
-function! <SID>StripTrailingWhitespaces()
-    " save last search & cursor position
-    let _s=@/
-    let l = line(".")
-    let c = col(".")
-    %s/\s\+$//e
-    let @/=_s
-    call cursor(l, c)
-endfunction
 
 " Sudo this file if opened without root priveileges
 noremap su <Esc>:w !sudo tee % >/dev/null<CR>
@@ -412,10 +400,6 @@ augroup configgroup
 
     " Conditional commands
     " autocmd FileType java setlocal noexpandtab
-
-    " Strip Trailing Whitespace
-    " autocmd BufWritePre *.php,*.py,*.js,*.txt,*.hs,*.java,*.md,*.html
-    "                 \:call FixWhitespace
 
     " Return to last edit position when opening files (You want this!)
     autocmd BufReadPost *
