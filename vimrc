@@ -220,6 +220,7 @@ Plug 'Lokaltog/vim-easymotion'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'ledger/vim-ledger'
+Plug 'vim-scripts/vim-geeknote'
 
 call plug#end()
 
@@ -253,7 +254,7 @@ let g:UltiSnipsEditSplit="vertical"
 """""""""""""
 " let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
 noremap <leader>o :YcmCompleter GoToDefinition<CR>
-noremap <leader>c :YcmDiags<CR>
+noremap <leader>g :YcmDiags<CR>
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_collect_identifiers_from_tags_file = 1
 
