@@ -338,6 +338,9 @@ noremap <leader>p :set invpaste paste?<CR>
 " Paste from clipboard
 noremap <leader>v :set paste<CR>"+p:set nopaste<CR>
 
+" Copy block of code to clipboard
+noremap <leader>c "+yi{
+
 " Returns true if paste mode is enabled
 function! HasPaste()
     if &paste
