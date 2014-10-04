@@ -124,6 +124,11 @@ noremap <C-l> <C-w>l
 nmap <C-w>_ :split<CR>
 nmap <C-w>\ :vsplit<CR>
 
+" Taken from @Tarrasch's vimrc
+" Edit vimrc
+nmap <silent> <leader>ev :e $MYVIMRC<CR>
+nmap <silent> <leader>sv :so $MYVIMRC<CR>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Files, backups and undo
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -220,7 +225,7 @@ Plug 'Lokaltog/vim-easymotion'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'ledger/vim-ledger'
-Plug 'vim-scripts/vim-geeknote'
+" Plug 'vim-scripts/vim-geeknote'
 
 call plug#end()
 
