@@ -225,6 +225,7 @@ Plug 'Lokaltog/vim-easymotion'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'ledger/vim-ledger'
+Plug 'b4b4r07/vim-shellutils'
 " Plug 'vim-scripts/vim-geeknote'
 
 call plug#end()
