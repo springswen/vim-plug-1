@@ -12,7 +12,7 @@ set undolevels=1000
 syntax enable
 
 " If you want mouse support
-" set mouse=a
+set mouse=a
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => gVIM
@@ -204,28 +204,41 @@ set cmdheight=1
 " Vim-plug
 call plug#begin('~/.vim/plugged')
 
+" Must Haves
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+Plug 'tomtom/tcomment_vim'
+Plug 'bronson/vim-trailing-whitespace'
+Plug 'kien/ctrlp.vim'
+Plug 'rking/ag.vim'
+Plug 'Lokaltog/vim-easymotion'
+
+" File based
+Plug 'vim-pandoc/vim-pantondoc'
+Plug 'vim-pandoc/vim-pandoc-syntax'
+Plug 'mattn/emmet-vim'
+Plug 'ledger/vim-ledger'
+
+" Shell Utilities
+Plug 'tpope/vim-fugitive'
+Plug 'b4b4r07/vim-shellutils'
+
+" UI
+Plug 'bling/vim-airline'
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
+
+" Features
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer' }
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-repeat'
-Plug 'kien/ctrlp.vim'
-Plug 'tomtom/tcomment_vim'
-Plug 'bronson/vim-trailing-whitespace'
-Plug 'vim-pandoc/vim-pantondoc'
-Plug 'vim-pandoc/vim-pandoc-syntax'
-Plug 'rking/ag.vim'
-Plug 'mattn/emmet-vim'
-Plug 'tpope/vim-fugitive'
-Plug 'bling/vim-airline'
-Plug 'Lokaltog/vim-easymotion'
+
+" Themes
+Plug 'flazz/vim-colorschemes'
+
 " Plug 'vim-scripts/a.vim'
 " Plug 'kana/vim-textobj-entire' " Entire file as a text object
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/limelight.vim'
-Plug 'ledger/vim-ledger'
-Plug 'b4b4r07/vim-shellutils'
 " Plug 'vim-scripts/vim-geeknote'
 
 call plug#end()
@@ -294,6 +307,8 @@ let g:limelight_default_coefficient = 0.7
 " Goyo integration for limelight
 autocmd User GoyoEnter Limelight
 autocmd User GoyoLeave Limelight!
+
+noremap <leader>df :Goyo<CR>
 
 " Ledger
 """"""""
