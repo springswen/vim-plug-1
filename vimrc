@@ -15,13 +15,6 @@ syntax enable
 set mouse=a
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => gVIM
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" GVim remove unnecessary borders
-set go-=mr
-set go-=T
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Set 256 colors in vim
@@ -441,3 +434,15 @@ augroup configgroup
                 \   exe "normal! g`\"" |
                 \ endif
 augroup END
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => gVIM
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" GVim remove unnecessary borders
+if has('gui_running')
+  set go-=mr
+  set go-=T
+  set guifont=Source\ Code\ Pro\ 13
+  colorscheme solarized
+endif
+
