@@ -5,14 +5,72 @@
 set nocompatible
 
 " Sets how many lines of history VIM has to remember and undolevels
-set history=1000
-set undolevels=1000
+set history=9999
+set undolevels=9999
 
 " Enable syntax highlighting
 syntax enable
 
 " If you want mouse support
 set mouse=a
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Plugins
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Vim-plug
+" Automatic installaion of vim-plug
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !mkdir -p ~/.vim/autoload
+  silent !curl -fLo ~/.vim/autoload/plug.vim
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall
+endif
+call plug#begin('~/.vim/plugged')
+
+" Must Haves
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+Plug 'tomtom/tcomment_vim'
+Plug 'bronson/vim-trailing-whitespace'
+Plug 'kien/ctrlp.vim'
+Plug 'rking/ag.vim'
+Plug 'Lokaltog/vim-easymotion'
+
+" File based
+Plug 'vim-pandoc/vim-pantondoc'
+Plug 'vim-pandoc/vim-pandoc-syntax'
+
+" HTML
+Plug 'mattn/emmet-vim'
+
+"Ledger
+Plug 'ledger/vim-ledger'
+
+" C-family
+" Plug 'vim-scripts/a.vim'
+
+" Shell Utilities
+Plug 'tpope/vim-fugitive'
+Plug 'b4b4r07/vim-shellutils'
+
+" UI
+Plug 'bling/vim-airline'
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
+
+" Features
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer' }
+
+" Themes
+Plug 'flazz/vim-colorschemes'
+
+" Plug 'kana/vim-textobj-entire' " Entire file as a text object
+" Plug 'vim-scripts/vim-geeknote'
+
+call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
@@ -192,56 +250,20 @@ set statusline=\ FILE:\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h
 set cmdheight=1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => gVIM
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" GVim remove unnecessary borders
+if has('gui_running')
+  set go-=mr
+  set go-=T
+  set guifont=Source\ Code\ Pro\ 13
+  colorscheme solarized
+  set background=dark
+endif
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugins Specific
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Vim-plug
-" Automatic installaion of vim-plug
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !mkdir -p ~/.vim/autoload
-  silent !curl -fLo ~/.vim/autoload/plug.vim
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall
-endif
-call plug#begin('~/.vim/plugged')
-
-" Must Haves
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-repeat'
-Plug 'tomtom/tcomment_vim'
-Plug 'bronson/vim-trailing-whitespace'
-Plug 'kien/ctrlp.vim'
-Plug 'rking/ag.vim'
-Plug 'Lokaltog/vim-easymotion'
-
-" File based
-Plug 'vim-pandoc/vim-pantondoc'
-Plug 'vim-pandoc/vim-pandoc-syntax'
-Plug 'mattn/emmet-vim'
-Plug 'ledger/vim-ledger'
-
-" Shell Utilities
-Plug 'tpope/vim-fugitive'
-Plug 'b4b4r07/vim-shellutils'
-
-" UI
-Plug 'bling/vim-airline'
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/limelight.vim'
-
-" Features
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer' }
-
-" Themes
-Plug 'flazz/vim-colorschemes'
-
-" Plug 'vim-scripts/a.vim'
-" Plug 'kana/vim-textobj-entire' " Entire file as a text object
-" Plug 'vim-scripts/vim-geeknote'
-
-call plug#end()
 
 " Ack
 """""""""""""
@@ -434,15 +456,4 @@ augroup configgroup
                 \   exe "normal! g`\"" |
                 \ endif
 augroup END
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => gVIM
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" GVim remove unnecessary borders
-if has('gui_running')
-  set go-=mr
-  set go-=T
-  set guifont=Source\ Code\ Pro\ 13
-  colorscheme solarized
-endif
 
