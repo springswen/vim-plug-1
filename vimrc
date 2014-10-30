@@ -27,7 +27,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 call plug#begin('~/.vim/plugged')
 
-" Must Haves
+" Vim extensions
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tomtom/tcomment_vim'
@@ -36,7 +36,10 @@ Plug 'kien/ctrlp.vim'
 Plug 'rking/ag.vim'
 Plug 'Lokaltog/vim-easymotion'
 
-" File based
+" English
+Plug 'tpope/vim-abolish'
+
+" Markdown
 Plug 'vim-pandoc/vim-pantondoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 
@@ -45,9 +48,11 @@ Plug 'mattn/emmet-vim'
 
 "Ledger
 Plug 'ledger/vim-ledger'
+Plug 'tpope/vim-speeddating'
 
 " C-family
 " Plug 'vim-scripts/a.vim'
+Plug 'chazy/cscope_maps'
 
 " Shell Utilities
 Plug 'tpope/vim-fugitive'
@@ -336,7 +341,8 @@ noremap <leader>df :Goyo<CR>
 
 " Ledger
 """"""""
-noremap <leader>d :r !date +\%Y/\%m/\%d<CR>
+noremap <leader>d :r !date +\%Y-\%m-\%d<CR>
+noremap <leader>fd :r !date<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "=> My precious
