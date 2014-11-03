@@ -316,6 +316,12 @@ autocmd FileType html,css EmmetInstall
 """""""""""""
 let g:airline_powerline_fonts = 1
 
+" Fix for gvim
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+let g:airline_symbols.space = "\ua0"
+
 " NERDTree
 """""""""""""
 noremap <C-n> :NERDTreeToggle<CR>
