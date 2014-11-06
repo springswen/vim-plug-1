@@ -35,6 +35,22 @@ Plug 'bronson/vim-trailing-whitespace'
 Plug 'kien/ctrlp.vim'
 Plug 'rking/ag.vim'
 Plug 'Lokaltog/vim-easymotion'
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer' }
+Plug 'vim-scripts/taglist.vim', { 'on': 'TlistToggle' }
+
+" UI
+Plug 'bling/vim-airline'
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
+
+" Themes
+Plug 'flazz/vim-colorschemes'
+
+" Documentation
+Plug 'Keithbsmiley/investigate.vim'
 
 " English
 Plug 'tpope/vim-abolish'
@@ -58,19 +74,6 @@ Plug 'chazy/cscope_maps'
 Plug 'tpope/vim-fugitive'
 Plug 'b4b4r07/vim-shellutils'
 
-" UI
-Plug 'bling/vim-airline'
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/limelight.vim'
-
-" Features
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer' }
-
-" Themes
-Plug 'flazz/vim-colorschemes'
 
 " Plug 'kana/vim-textobj-entire' " Entire file as a text object
 " Plug 'vim-scripts/vim-geeknote'
@@ -163,27 +166,32 @@ let mapleader = " "
 let g:mapleader = " "
 
 " I want to force myself to use j,k,l
-noremap <up> <nop>
-noremap <down> <nop>
-noremap <left> <nop>
-noremap <right> <nop>
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
 
 " The annoying jump over lines is removed
 nnoremap j gj
 nnoremap k gk
 
 "mapping for the windows
-noremap <C-j> <C-w>j
-noremap <C-h> <C-w>h
-noremap <C-k> <C-w>k
-noremap <C-l> <C-w>l
-nmap <C-w>_ :split<CR>
-nmap <C-w>\ :vsplit<CR>
+nnoremap <C-j> <C-w>j
+nnoremap <C-h> <C-w>h
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+nnoremap <C-w>_ :split<CR>
+nnoremap <C-w>\ :vsplit<CR>
 
 " Taken from @Tarrasch's vimrc
 " Edit vimrc
-nmap <silent> <leader>ev :e $MYVIMRC<CR>
-nmap <silent> <leader>sv :so $MYVIMRC<CR>
+nnoremap <silent> <leader>ev :e $MYVIMRC<CR>
+nnoremap <silent> <leader>sv :so $MYVIMRC<CR>
+
+" Quickly change buffers
+nnoremap <C-e> :e#<CR>
+nnoremap <C-(> :bp<CR>
+nnoremap <C-)> :bn<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Files, backups and undo
@@ -272,7 +280,7 @@ endif
 
 " Ack
 """""""""""""
-noremap <leader>a :Ag
+nnoremap <leader>a :Ag
 
 " Supertab
 """""""""""""
@@ -301,8 +309,8 @@ let g:UltiSnipsEditSplit="vertical"
 " YCM
 """""""""""""
 " let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
-noremap <leader>o :YcmCompleter GoToDefinition<CR>
-noremap <leader>g :YcmDiags<CR>
+nnoremap <leader>o :YcmCompleter GoToDefinition<CR>
+nnoremap <leader>g :YcmDiags<CR>
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_collect_identifiers_from_tags_file = 1
 
@@ -324,7 +332,11 @@ let g:airline_symbols.space = "\ua0"
 
 " NERDTree
 """""""""""""
-noremap <C-n> :NERDTreeToggle<CR>
+nnoremap <C-n> :NERDTreeToggle<CR>
+
+" Taglist
+"""""""""""""
+nnoremap <C-t> :TlistToggle<CR>
 
 " Limelight
 """""""""""""
@@ -343,12 +355,12 @@ let g:limelight_default_coefficient = 0.7
 autocmd User GoyoEnter Limelight
 autocmd User GoyoLeave Limelight!
 
-noremap <leader>df :Goyo<CR>
+nnoremap <leader>df :Goyo<CR>
 
 " Ledger
 """"""""
-noremap <leader>d :r !date +\%Y-\%m-\%d<CR>
-noremap <leader>fd :r !date<CR>
+nnoremap <leader>d :r !date +\%Y-\%m-\%d<CR>
+nnoremap <leader>fd :r !date<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "=> My precious
@@ -357,14 +369,14 @@ noremap <leader>fd :r !date<CR>
 " File based
 """""""""""""""
 " For JSON files pretty print them
-noremap <leader>pp :%!python -m json.tool<CR>
+nnoremap <leader>pp :%!python -m json.tool<CR>
 
 " For hex Files
-noremap <leader>x :%!xxd<CR>
-noremap <leader>nx :%!xxd -r<CR>
+nnoremap <leader>x :%!xxd<CR>
+nnoremap <leader>nx :%!xxd -r<CR>
 
 " for spelling options when writing
-noremap <silent> <leader>s :set spell!<CR>
+nnoremap <silent> <leader>s :set spell!<CR>
 set spelllang=en_gb
 
 " vim unicode
@@ -385,19 +397,19 @@ endif
 nnoremap <silent> <leader>/ :nohlsearch<CR>
 
 " white spaces
-noremap <silent> <leader>w :set list!<CR>
+nnoremap <silent> <leader>w :set list!<CR>
 
 " Highlight the last selected text area
-noremap <leader>h '[v']<CR>
+nnoremap <leader>h '[v']<CR>
 
 " Paste toggle <leader>p
-noremap <leader>p :set invpaste paste?<CR>
+nnoremap <leader>p :set invpaste paste?<CR>
 
 " Paste from clipboard
-noremap <leader>v :set paste<CR>"+p:set nopaste<CR>
+nnoremap <leader>v :set paste<CR>"+p:set nopaste<CR>
 
 " Copy block of code to clipboard
-noremap <leader>c "+yi{
+nnoremap <leader>c "+yi{
 
 " Returns true if paste mode is enabled
 function! HasPaste()
@@ -408,10 +420,10 @@ function! HasPaste()
 endfunction
 
 " Fixing whitespace
-noremap <leader>fw :FixWhitespace<CR>
+nnoremap <leader>fw :FixWhitespace<CR>
 
 " Sudo this file if opened without root priveileges
-noremap su <Esc>:w !sudo tee % >/dev/null<CR>
+nnoremap <leader>su <Esc>:w !sudo tee % >/dev/null<CR>
 
 " Miscellaneous
 """"""""""""""""
