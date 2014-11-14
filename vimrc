@@ -61,6 +61,7 @@ Plug 'vim-pandoc/vim-pandoc-syntax'
 
 " HTML
 Plug 'mattn/emmet-vim'
+Plug 'vim-scripts/closetag.vim'
 
 "Ledger
 Plug 'ledger/vim-ledger'
