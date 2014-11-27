@@ -48,6 +48,7 @@ Plug 'junegunn/limelight.vim'
 
 " Themes
 Plug 'flazz/vim-colorschemes'
+Plug 'gosukiwi/vim-atom-dark'
 
 " Documentation
 Plug 'Keithbsmiley/investigate.vim'
@@ -62,6 +63,7 @@ Plug 'vim-pandoc/vim-pandoc-syntax'
 " HTML
 Plug 'mattn/emmet-vim'
 Plug 'vim-scripts/closetag.vim'
+Plug 'vim-scripts/css_color'
 
 "Ledger
 Plug 'ledger/vim-ledger'
