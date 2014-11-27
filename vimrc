@@ -194,6 +194,9 @@ nnoremap <C-e> :e#<CR>
 nnoremap <C-(> :bp<CR>
 nnoremap <C-)> :bn<CR>
 
+" Exit
+nnoremap <leader>q :q!<CR>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Files, backups and undo
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
