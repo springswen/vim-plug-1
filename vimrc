@@ -52,6 +52,7 @@ Plug 'gosukiwi/vim-atom-dark'
 
 " Documentation
 Plug 'Keithbsmiley/investigate.vim'
+Plug 'antoyo/vim-licenses'
 
 " English
 Plug 'tpope/vim-abolish'
@@ -76,6 +77,9 @@ Plug 'chazy/cscope_maps'
 " Shell Utilities
 Plug 'tpope/vim-fugitive'
 Plug 'b4b4r07/vim-shellutils'
+
+" Emoji
+Plug 'kyuhi/vim-emoji-complete'
 
 
 " Plug 'kana/vim-textobj-entire' " Entire file as a text object
@@ -368,6 +372,10 @@ nnoremap <leader>df :Goyo<CR>
 nnoremap <leader>d :r !date +\%Y-\%m-\%d<CR>
 nnoremap <leader>fd :r !date<CR>
 
+" Licenses
+"""""""""""
+let g:licenses_authors_name = 'Srijan R Shetty <srijan.shetty+code@gmail.com>'
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "=> My precious
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -485,5 +493,11 @@ augroup configgroup
                 \ if line("'\"") > 0 && line("'\"") <= line("$") |
                 \   exe "normal! g`\"" |
                 \ endif
+
+    " Add license
+    autocmd BufNewFile *.c Gpl
+    autocmd BufNewFile *.cpp Gpl
+    autocmd BufNewFile *.js Gpl
+    autocmd BufNewFile *.py Gpl
 augroup END
 
