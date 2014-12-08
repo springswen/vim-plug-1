@@ -28,30 +28,37 @@ endif
 call plug#begin('~/.vim/plugged')
 
 " Vim extensions
-Plug 'tpope/vim-surround'
+" Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
+Plug 'Raimondi/delimitMate'
 Plug 'tomtom/tcomment_vim'
 Plug 'bronson/vim-trailing-whitespace'
-Plug 'kien/ctrlp.vim'
 Plug 'rking/ag.vim'
-Plug 'Lokaltog/vim-easymotion'
+
+" Buffers
+Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'vim-scripts/taglist.vim', { 'on': 'TlistToggle' }
+
+" Motions
+Plug 'Lokaltog/vim-easymotion'
+
+" Code Related
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'scrooloose/syntastic'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer' }
-Plug 'vim-scripts/taglist.vim', { 'on': 'TlistToggle' }
 
 " UI
 Plug 'bling/vim-airline'
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/limelight.vim'
+" Plug 'junegunn/goyo.vim'
+" Plug 'junegunn/limelight.vim'
 
 " Themes
 Plug 'flazz/vim-colorschemes'
-Plug 'gosukiwi/vim-atom-dark'
 
 " Documentation
-Plug 'Keithbsmiley/investigate.vim'
 Plug 'antoyo/vim-licenses'
 
 " English
@@ -66,6 +73,11 @@ Plug 'mattn/emmet-vim'
 Plug 'vim-scripts/closetag.vim'
 Plug 'vim-scripts/css_color'
 
+" JS
+Plug 'marijnh/tern_for_vim' , {'do': 'npm install'}
+Plug 'jelera/vim-javascript-syntax'
+Plug 'pangloss/vim-javascript'
+
 "Ledger
 Plug 'ledger/vim-ledger'
 Plug 'tpope/vim-speeddating'
@@ -76,11 +88,9 @@ Plug 'chazy/cscope_maps'
 
 " Shell Utilities
 Plug 'tpope/vim-fugitive'
-Plug 'b4b4r07/vim-shellutils'
 
 " Emoji
 Plug 'kyuhi/vim-emoji-complete'
-
 
 " Plug 'kana/vim-textobj-entire' " Entire file as a text object
 " Plug 'vim-scripts/vim-geeknote'
@@ -202,6 +212,9 @@ nnoremap <C-)> :bn<CR>
 
 " Exit
 nnoremap <leader>q :q!<CR>
+
+" Insert line
+inoremap <C-i> <CR><Esc>O
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Files, backups and undo
@@ -375,6 +388,11 @@ nnoremap <leader>fd :r !date<CR>
 " Licenses
 """""""""""
 let g:licenses_authors_name = 'Srijan R Shetty <srijan.shetty+code@gmail.com>'
+
+" Tern for vim
+"""""""""""""""
+let g:tern_map_keys=1
+let g:tern_show_argument_hints='on_hold'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "=> My precious
