@@ -49,6 +49,7 @@ Plug 'scrooloose/syntastic'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer' }
+Plug 'KabbAmine/zeavim.vim'
 
 " UI
 Plug 'bling/vim-airline'
