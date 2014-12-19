@@ -514,9 +514,9 @@ augroup configgroup
                 \ endif
 
     " Add license
-    autocmd BufNewFile *.c Gpl
-    autocmd BufNewFile *.cpp Gpl
-    autocmd BufNewFile *.js Gpl
-    autocmd BufNewFile *.py Gpl
+    autocmd BufNewFile *.c Mit
+    autocmd BufNewFile *.cpp Mit
+    autocmd BufNewFile *.js Mit
+    autocmd BufNewFile *.py Mit
 augroup END
 
