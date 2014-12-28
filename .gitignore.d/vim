@@ -1,0 +1,12 @@
+*
+!.bowerrc
+!.gitignore.d/
+!.gitignore.d/vim
+!.jshintrc
+!README.md
+!.tern-project
+!vim
+!vim/autoload
+!vim/autoload/plug.vim
+!.vimrc
+!.ycm_extra_conf.py
