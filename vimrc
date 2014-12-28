@@ -68,6 +68,7 @@ Plug 'tpope/vim-abolish'
 " Markdown
 Plug 'vim-pandoc/vim-pantondoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
+Plug 'suan/vim-instant-markdown'
 
 " HTML
 Plug 'mattn/emmet-vim'
@@ -394,6 +395,11 @@ let g:licenses_authors_name = 'Srijan R Shetty <srijan.shetty+code@gmail.com>'
 """""""""""""""
 let g:tern_map_keys=1
 let g:tern_show_argument_hints='on_hold'
+
+" Instant markdown
+""""""""""""""""""
+let g:instant_markdown_slow = 1
+let g:instant_markdown_autostart = 0
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "=> My precious
