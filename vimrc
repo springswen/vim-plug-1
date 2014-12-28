@@ -91,6 +91,9 @@ Plug 'chazy/cscope_maps'
 " Shell Utilities
 Plug 'tpope/vim-fugitive'
 
+" Latex
+Plug 'vim-scripts/tex-syntax'
+
 " Emoji
 Plug 'kyuhi/vim-emoji-complete'
 
