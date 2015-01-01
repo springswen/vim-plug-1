@@ -28,7 +28,7 @@ endif
 call plug#begin('~/.vim/plugged')
 
 " Vim extensions
-" Plug 'tpope/vim-surround'
+Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'Raimondi/delimitMate'
 Plug 'tomtom/tcomment_vim'
