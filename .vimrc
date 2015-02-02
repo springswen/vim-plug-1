@@ -381,12 +381,6 @@ let g:limelight_conceal_guifg = '#777777'
 " Default: 0.5
 let g:limelight_default_coefficient = 0.7
 
-" Goyo integration for limelight
-autocmd User GoyoEnter Limelight
-autocmd User GoyoLeave Limelight!
-
-nnoremap <leader>df :Goyo<CR>
-
 " Ledger
 """"""""
 nnoremap <leader>d :r !date +\%Y-\%m-\%d<CR>
@@ -433,7 +427,6 @@ if has("multi_byte")
   "setglobal bomb
   set fileencodings=ucs-bom,utf-8,latin1
 endif
-
 
 " Utilities
 """""""""""""""
