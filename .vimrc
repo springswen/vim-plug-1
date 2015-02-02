@@ -50,6 +50,7 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer' }
 Plug 'KabbAmine/zeavim.vim'
+Plug 'editorconfig/editorconfig-vim'
 
 " UI
 Plug 'bling/vim-airline'
@@ -251,6 +252,7 @@ filetype indent on
 " Be smart when using tabs ;)
 set smarttab
 
+" Migrated to editorconfig
 " 1 tab == 4 spaces
 set shiftwidth=4
 set tabstop=4
@@ -513,8 +515,11 @@ augroup configgroup
     " Switch off auto comment
     autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
-    " Conditional commands
-    " autocmd FileType java setlocal noexpandtab
+    " Taken from https://superuser.com/questions/632657/how-to-setup-vim-to-edit-both-makefile-and-normal-code-files
+    " in makefiles, don't expand tabs to spaces, since actual tab characters are
+    " needed, and have indentation at 8 chars to be sure that all indents are tabs
+    " (despite the mappings later):
+    " autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0
 
     " Return to last edit position when opening files (You want this!)
     autocmd BufReadPost *
@@ -528,4 +533,3 @@ augroup configgroup
     autocmd BufNewFile *.js Mit
     autocmd BufNewFile *.py Mit
 augroup END
-

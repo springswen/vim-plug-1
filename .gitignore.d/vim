@@ -8,6 +8,7 @@
 !vim/autoload
 !vim/autoload/plug.vim
 !.vimrc
+!.editorconfig
 !.ycm_extra_conf.py
 !.README.d/
 !.README.d/vim.md
