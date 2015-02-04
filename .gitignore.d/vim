@@ -14,3 +14,5 @@
 !.README.d/vim.md
 !.LICENSES.d/
 !.LICENSES.d/vim
+!.bootstrap.d/
+!.bootstrap.d/vim
