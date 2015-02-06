@@ -35,6 +35,9 @@ Plug 'tomtom/tcomment_vim'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'rking/ag.vim'
 
+" Emacs Emulation
+Plug 'chrisbra/NrrwRgn'
+
 " Buffers
 Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
@@ -88,6 +91,7 @@ Plug 'tpope/vim-speeddating'
 " C-family
 " Plug 'vim-scripts/a.vim'
 Plug 'chazy/cscope_maps'
+Plug 'vim-scripts/IndentWise'
 
 " Shell Utilities
 Plug 'tpope/vim-fugitive'
@@ -399,6 +403,10 @@ let g:tern_show_argument_hints='on_hold'
 """"""""""""""""""
 let g:instant_markdown_slow = 1
 let g:instant_markdown_autostart = 0
+
+" R files
+""""""""""
+let g:syntastic_r_lint_styles = 'list(spacing.indentation.notabs, spacing.indentation.evenindent)'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "=> My precious
