@@ -30,13 +30,18 @@ call plug#begin('~/.vim/plugged')
 " Vim extensions
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
+Plug 'vim-scripts/visualrepeat'
 Plug 'Raimondi/delimitMate'
 Plug 'tomtom/tcomment_vim'
-Plug 'bronson/vim-trailing-whitespace'
-Plug 'rking/ag.vim'
 
-" Emacs Emulation
-Plug 'chrisbra/NrrwRgn'
+" Alignment
+Plug 'bronson/vim-trailing-whitespace'
+Plug 'junegunn/vim-easy-align'
+
+" Search
+Plug 'junegunn/vim-pseudocl'
+Plug 'junegunn/vim-oblique'
+Plug 'rking/ag.vim'
 
 " Buffers
 Plug 'kien/ctrlp.vim'
@@ -47,7 +52,7 @@ Plug 'vim-scripts/taglist.vim', { 'on': 'TlistToggle' }
 Plug 'Lokaltog/vim-easymotion'
 
 " Code Related
-Plug 'nathanaelkane/vim-indent-guides'
+Plug 'antoyo/vim-licenses'
 Plug 'scrooloose/syntastic'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
@@ -57,14 +62,9 @@ Plug 'editorconfig/editorconfig-vim'
 
 " UI
 Plug 'bling/vim-airline'
-" Plug 'junegunn/goyo.vim'
-" Plug 'junegunn/limelight.vim'
-
-" Themes
 Plug 'flazz/vim-colorschemes'
-
-" Documentation
-Plug 'antoyo/vim-licenses'
+Plug 'kyuhi/vim-emoji-complete'
+Plug 'vim-scripts/vim-webdevicons'
 
 " English
 Plug 'tpope/vim-abolish'
@@ -89,21 +89,16 @@ Plug 'ledger/vim-ledger'
 Plug 'tpope/vim-speeddating'
 
 " C-family
-" Plug 'vim-scripts/a.vim'
 Plug 'chazy/cscope_maps'
 Plug 'vim-scripts/IndentWise'
-
-" Shell Utilities
-Plug 'tpope/vim-fugitive'
 
 " Latex
 Plug 'vim-scripts/tex-syntax'
 
-" Emoji
-Plug 'kyuhi/vim-emoji-complete'
-
-" Plug 'kana/vim-textobj-entire' " Entire file as a text object
-" Plug 'vim-scripts/vim-geeknote'
+" General Tooling
+Plug 'tpope/vim-fugitive'
+Plug 'tmux-plugins/vim-tmux'
+Plug 'neilagabriel/vim-geeknote'
 
 call plug#end()
 
@@ -407,6 +402,14 @@ let g:instant_markdown_autostart = 0
 " R files
 """"""""""
 let g:syntastic_r_lint_styles = 'list(spacing.indentation.notabs, spacing.indentation.evenindent)'
+
+" Easy align
+""""""""""""
+" Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
+vmap <Enter> <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "=> My precious
