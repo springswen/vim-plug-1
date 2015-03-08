@@ -9,6 +9,7 @@
 !vim/autoload/plug.vim
 !.vimrc
 !.editorconfig
+!.gdbinit
 !.ycm_extra_conf.py
 !.README.d/
 !.README.d/vim.md
