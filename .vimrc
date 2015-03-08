@@ -46,7 +46,11 @@ Plug 'rking/ag.vim'
 " Buffers
 Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+
+" Tags
 Plug 'vim-scripts/taglist.vim', { 'on': 'TlistToggle' }
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-easytags'
 
 " Motions
 Plug 'Lokaltog/vim-easymotion'
@@ -95,8 +99,11 @@ Plug 'vim-scripts/IndentWise'
 " Latex
 Plug 'vim-scripts/tex-syntax'
 
-" General Tooling
+" Git
 Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+
+" Miscellaneous Tooling
 Plug 'tmux-plugins/vim-tmux'
 Plug 'neilagabriel/vim-geeknote'
 
