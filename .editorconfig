@@ -29,4 +29,4 @@ indent_size = 4
 # R files
 [*.r]
 indent_style = tab
-indent_size = 8
+indent_size = 2
