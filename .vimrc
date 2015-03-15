@@ -36,7 +36,7 @@ Plug 'tomtom/tcomment_vim'
 
 " Alignment
 Plug 'bronson/vim-trailing-whitespace'
-Plug 'junegunn/vim-easy-align'
+" Plug 'junegunn/vim-easy-align'
 
 " Search
 Plug 'junegunn/vim-pseudocl'
@@ -76,7 +76,6 @@ Plug 'tpope/vim-abolish'
 " Markdown
 Plug 'vim-pandoc/vim-pantondoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
-Plug 'suan/vim-instant-markdown'
 
 " HTML
 Plug 'mattn/emmet-vim'
@@ -101,7 +100,7 @@ Plug 'vim-scripts/tex-syntax'
 
 " Git
 Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
+" Plug 'airblade/vim-gitgutter'
 
 " Miscellaneous Tooling
 Plug 'tmux-plugins/vim-tmux'
@@ -544,3 +543,8 @@ augroup configgroup
     autocmd BufNewFile *.js Mit
     autocmd BufNewFile *.py Mit
 augroup END
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Experimental Stuff
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
