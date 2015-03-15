@@ -56,13 +56,15 @@ Plug 'xolox/vim-easytags'
 Plug 'Lokaltog/vim-easymotion'
 
 " Code Related
-Plug 'antoyo/vim-licenses'
-Plug 'scrooloose/syntastic'
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer' }
+Plug 'jeetsukumaran/vim-indentwise'                                             " Move around in indents
+Plug 'antoyo/vim-licenses'                                                      " FOSS Licensse
+Plug 'scrooloose/syntastic'                                                     " Syntax Checking
+Plug 'SirVer/ultisnips'                                                         " Tab Completion of entities
+Plug 'honza/vim-snippets'                                                       " Snippets of code
+Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer' }       " Code Completion and Inline errors
+Plug 'tpope/vim-dispatch'                                                       " Compile Async
 Plug 'KabbAmine/zeavim.vim'
-Plug 'editorconfig/editorconfig-vim'
+Plug 'editorconfig/editorconfig-vim'                                            " Different config for different languages
 
 " UI
 Plug 'bling/vim-airline'
@@ -416,6 +418,11 @@ vmap <Enter> <Plug>(EasyAlign)
 
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
+
+" easytags
+""""""""""
+set tags=./tags;
+let g:easytags_dynamic_files = 2
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "=> My precious
