@@ -31,7 +31,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'vim-scripts/visualrepeat'
-Plug 'Raimondi/delimitMate'
 Plug 'tomtom/tcomment_vim'
 
 " Alignment
@@ -56,6 +55,7 @@ Plug 'xolox/vim-easytags'
 Plug 'Lokaltog/vim-easymotion'
 
 " Code Related
+Plug 'Raimondi/delimitMate'                                                     " Close matching parenthesis and the like
 Plug 'jeetsukumaran/vim-indentwise'                                             " Move around in indents
 Plug 'antoyo/vim-licenses'                                                      " FOSS Licensse
 Plug 'scrooloose/syntastic'                                                     " Syntax Checking
