@@ -35,7 +35,7 @@ Plug 'tomtom/tcomment_vim'
 
 " Alignment
 Plug 'bronson/vim-trailing-whitespace'
-" Plug 'junegunn/vim-easy-align'
+Plug 'godlygeek/tabular'
 
 " Search
 Plug 'junegunn/vim-pseudocl'
@@ -423,6 +423,21 @@ nmap ga <Plug>(EasyAlign)
 """"""""""
 set tags=./tags;
 let g:easytags_dynamic_files = 2
+
+" Tabularize
+""""""""""""
+" Taken from @timpopes gist https://gist.github.com/tpope/287147
+inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
+function! s:align()
+    let p = '^\s*|\s.*\s|\s*$'
+    if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
+        let column = strlen(substitute(getline('.')[0:col('.')],'[^|]','','g'))
+        let position = strlen(matchstr(getline('.')[0:col('.')],'.*|\s*\zs.*'))
+        Tabularize/|/l1
+        normal! 0
+        call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
+    endif
+endfunction
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "=> My precious
