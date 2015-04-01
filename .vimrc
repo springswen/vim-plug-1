@@ -308,7 +308,7 @@ if has('gui_running')
   set go-=T
   set guifont=Source\ Code\ Pro\ 13
   colorscheme solarized
-  set background=dark
+  set background=light
 endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
