@@ -383,6 +383,7 @@ nnoremap <leader>fd :r !date<CR>
 " Licenses
 """""""""""
 let g:licenses_authors_name = 'Srijan R Shetty <srijan.shetty+code@gmail.com>'
+let g:licenses_copyright_holders_name = 'Srijan R Shetty'
 
 " Tern for vim
 """""""""""""""
