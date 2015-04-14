@@ -375,19 +375,6 @@ nnoremap <C-n> :NERDTreeToggle<CR>
 """""""""""""
 nnoremap <C-t> :TlistToggle<CR>
 
-" Limelight
-"""""""""""""
-" Color name (:help cterm-colors) or ANSI code
-let g:limelight_conceal_ctermfg = 'gray'
-let g:limelight_conceal_ctermfg = 240
-
-" Color name (:help gui-colors) or RGB color
-let g:limelight_conceal_guifg = 'DarkGray'
-let g:limelight_conceal_guifg = '#777777'
-
-" Default: 0.5
-let g:limelight_default_coefficient = 0.7
-
 " Ledger
 """"""""
 nnoremap <leader>d :r !date +\%Y-\%m-\%d<CR>
@@ -546,12 +533,6 @@ augroup configgroup
 
     " Switch off auto comment
     autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-
-    " Taken from https://superuser.com/questions/632657/how-to-setup-vim-to-edit-both-makefile-and-normal-code-files
-    " in makefiles, don't expand tabs to spaces, since actual tab characters are
-    " needed, and have indentation at 8 chars to be sure that all indents are tabs
-    " (despite the mappings later):
-    " autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0
 
     " Return to last edit position when opening files (You want this!)
     autocmd BufReadPost *
