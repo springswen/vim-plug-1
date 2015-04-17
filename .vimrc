@@ -128,7 +128,7 @@ set ruler
 "This is the most awesome configurationa ever, is shows both
 "the absolute and relative numbering together to make jumps
 "easier
-set relativenumber
+" set relativenumber
 set number
 
 " Configure backspace so it acts as it should act
