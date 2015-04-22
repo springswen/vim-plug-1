@@ -98,11 +98,10 @@ Plug 'chazy/cscope_maps'
 Plug 'vim-scripts/IndentWise'
 
 " Latex
-Plug 'vim-scripts/tex-syntax'
+Plug 'lervag/vimtex'
 
 " Git
 Plug 'tpope/vim-fugitive'
-" Plug 'airblade/vim-gitgutter'
 
 " Miscellaneous Tooling
 Plug 'tmux-plugins/vim-tmux'
@@ -426,6 +425,12 @@ function! s:align()
         call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
     endif
 endfunction
+
+" vimtex
+"""""""""
+
+let g:vimtex_fold_enabled = 0
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "=> My precious
