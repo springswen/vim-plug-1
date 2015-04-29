@@ -72,6 +72,9 @@ Plug 'flazz/vim-colorschemes'
 Plug 'kyuhi/vim-emoji-complete'
 Plug 'vim-scripts/vim-webdevicons'
 
+" Python
+Plug 'ivanov/vim-ipython'
+
 " English
 Plug 'tpope/vim-abolish'
 
