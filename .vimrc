@@ -32,6 +32,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'vim-scripts/visualrepeat'
 Plug 'tomtom/tcomment_vim'
+Plug 'sjl/gundo.vim'
 
 " Alignment
 Plug 'bronson/vim-trailing-whitespace'
@@ -431,9 +432,13 @@ endfunction
 
 " vimtex
 """""""""
-
 let g:vimtex_fold_enabled = 0
 
+" gundo
+"""""""
+nnoremap <leader>tt :GundoToggle<CR>
+set undofile
+set undodir=~/.vim/undodir
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "=> My precious
