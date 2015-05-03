@@ -4,9 +4,6 @@
 !.gitignore.d/vim
 !.jshintrc
 !.tern-project
-!vim
-!vim/autoload
-!vim/autoload/plug.vim
 !.vimrc
 !.editorconfig
 !.gdbinit
