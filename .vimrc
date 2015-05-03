@@ -71,7 +71,7 @@ Plug 'editorconfig/editorconfig-vim'                                            
 Plug 'bling/vim-airline'
 Plug 'flazz/vim-colorschemes'
 Plug 'kyuhi/vim-emoji-complete'
-Plug 'vim-scripts/vim-webdevicons'
+" Plug 'vim-scripts/vim-webdevicons'
 
 " Python
 Plug 'ivanov/vim-ipython'
