@@ -559,6 +559,9 @@ augroup configgroup
     autocmd BufNewFile *.cpp Mit
     autocmd BufNewFile *.js Mit
     autocmd BufNewFile *.py Mit
+
+    " Additional Syntax Highlighting
+    au BufNewFile, BufRead *.ejs set filetype=html
 augroup END
 
 
