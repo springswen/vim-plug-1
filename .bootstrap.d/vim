@@ -1,5 +1,8 @@
 #!/bin/zsh
 
+# latexmk
+sudo apt-get install -y latexmk || echo "Error: latexmk"
+
 # For instant markdown
 npm install -g instant-markdown-d && gem install pygments.rb || echo "Error: Instant Markdown"
 
