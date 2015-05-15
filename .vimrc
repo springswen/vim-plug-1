@@ -309,7 +309,7 @@ set cmdheight=1
 if has('gui_running')
   set go-=mr
   set go-=T
-  set guifont=Source\ Code\ Pro\ 13
+  set guifont=Sauce\ Code\ Powerline\ 13
   colorscheme solarized
   set background=light
 endif
