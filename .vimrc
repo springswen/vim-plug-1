@@ -50,7 +50,7 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 " Tags
 Plug 'vim-scripts/taglist.vim', { 'on': 'TlistToggle' }
 Plug 'xolox/vim-misc'
-Plug 'xolox/vim-easytags'
+Plug 'xolox/vim-easytags', { 'for': ['c', 'c++', 'python', 'javascript'] }
 
 " Motions
 Plug 'Lokaltog/vim-easymotion'
