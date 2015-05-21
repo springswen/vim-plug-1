@@ -61,10 +61,10 @@ Plug 'jeetsukumaran/vim-indentwise'                                             
 Plug 'antoyo/vim-licenses'                                                      " FOSS Licensse
 Plug 'scrooloose/syntastic'                                                     " Syntax Checking
 Plug 'SirVer/ultisnips'                                                         " Tab Completion of entities
-Plug 'honza/vim-snippets'                                                       " Snippets of code
+" Plug 'honza/vim-snippets'                                                       " Snippets of code
 Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer' }       " Code Completion and Inline errors
 Plug 'tpope/vim-dispatch'                                                       " Compile Async
-Plug 'KabbAmine/zeavim.vim'
+" Plug 'KabbAmine/zeavim.vim'
 Plug 'editorconfig/editorconfig-vim'                                            " Different config for different languages
 
 " UI
