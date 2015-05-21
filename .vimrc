@@ -561,7 +561,10 @@ augroup configgroup
     autocmd BufNewFile *.py Mit
 
     " Additional Syntax Highlighting
-    au BufNewFile, BufRead *.ejs set filetype=html
+    au BufEnter *.ejs set filetype=html
+    au BufEnter *.mrconfig set filetype=dosini
+    au BufEnter *.git set filetype=dosini
+    au BufEnter *.vcsh set filetype=dosini
 augroup END
 
 
