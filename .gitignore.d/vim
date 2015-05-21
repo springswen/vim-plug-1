@@ -5,6 +5,7 @@
 !.jshintrc
 !.tern-project
 !.vimrc
+!.vimrc.py
 !.editorconfig
 !.gdbinit
 !.ycm_extra_conf.py

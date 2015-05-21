@@ -111,6 +111,9 @@ Plug 'tpope/vim-fugitive'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'neilagabriel/vim-geeknote'
 
+" Vim script in python
+" Plug 'amoffat/snake'
+
 call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
