@@ -87,6 +87,7 @@ Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'mattn/emmet-vim'
 Plug 'vim-scripts/closetag.vim'
 Plug 'vim-scripts/css_color'
+Plug 'edsono/vim-matchit'
 
 " JS
 Plug 'marijnh/tern_for_vim' , {'do': 'npm install'}
