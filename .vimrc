@@ -416,8 +416,9 @@ nmap ga <Plug>(EasyAlign)
 
 " easytags
 """"""""""
-set tags=./tags;
-let g:easytags_dynamic_files = 2
+" set tags=./tags;
+" let g:easytags_dynamic_files = 2
+" set cpoptions=d
 
 " Tabularize
 """"""""""""
