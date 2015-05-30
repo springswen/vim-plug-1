@@ -253,7 +253,6 @@ set autoread
 set nobackup
 set nowb
 set noswapfile
-set noundofile
 
 " Enable filetype plugins
 filetype on
@@ -440,9 +439,13 @@ let g:vimtex_fold_enabled = 0
 
 " gundo
 """""""
+" Time travelling with vim
+" All changes are automatically saved; All undos are logged, so we can always move
+" back and forth between changes and files without worrying
 nnoremap <leader>tt :GundoToggle<CR>
 set undofile
 set undodir=~/.vim/undodir
+au FocusLost * silent! wa
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "=> My precious
