@@ -135,8 +135,9 @@ set ruler
 "This is the most awesome configurationa ever, is shows both
 "the absolute and relative numbering together to make jumps
 "easier
-" set relativenumber
 set number
+" set relativenumber
+nnoremap <silent><leader>n :set relativenumber!<cr>
 
 " Configure backspace so it acts as it should act
 set backspace=eol,start,indent
