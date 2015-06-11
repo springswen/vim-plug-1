@@ -37,6 +37,7 @@ Plug 'sjl/gundo.vim'
 " Alignment
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'godlygeek/tabular'
+Plug 'luochen1990/indent-detector.vim'
 
 " Search
 Plug 'junegunn/vim-pseudocl'
