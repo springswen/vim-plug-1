@@ -581,3 +581,8 @@ augroup END
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Experimental Stuff
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+if has('nvim')
+  let g:python_host_prog='/home/srijan/.pyenv/shims/python2.7'
+  let g:python3_host_prog='/home/srijan/.pyenv/shims/python3.4'
+endif
