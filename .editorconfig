@@ -26,6 +26,11 @@ indent_style = tab
 indent_size = 4
 
 # R files
-[*.r]
+[{*.r,.mrconfig}]
 indent_style = tab
 indent_size = 2
+
+# JS files
+[*.js]
+indent_style = spaces
+indent_size = 4
