@@ -335,6 +335,8 @@ let g:SuperTabDefaultCompletionType="context"
 " Ctrl.P
 """""""""""""
 set runtimepath^=~/.vim/bundle/ctrlp.vim
+let g:ctrlp_map = '<M-e>'
+let g:ctrlp_cmd = 'CtrlP'
 
 " Ctrl P on the top rather than bottom
 let g:ctrlp_match_window_bottom = 0
