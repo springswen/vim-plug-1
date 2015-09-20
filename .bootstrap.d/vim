@@ -13,4 +13,3 @@ sudo apt-get install -y shellcheck || echo "Error: Shellcheck"
 # JS, CSS, JSON
 npm install -g jshint || echo "Error: jshint"
 npm install -g csslint || echo "Error: csslint"
-npm install -g jsonlint || echo "Error: jsonlint"
