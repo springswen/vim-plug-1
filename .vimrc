@@ -457,6 +457,11 @@ au FocusLost * silent! wa
 "=> My precious
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" Don't use mkd
+""""""""""""""""
+au! BufRead,BufNewFile *.markdown set filetype=mkd
+au! BufRead,BufNewFile *.md       set filetype=mkd
+
 " File based
 """""""""""""""
 " For JSON files pretty print them
