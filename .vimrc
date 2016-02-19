@@ -43,6 +43,7 @@ Plug 'luochen1990/indent-detector.vim'
 Plug 'junegunn/vim-pseudocl'
 Plug 'junegunn/vim-oblique'
 Plug 'rking/ag.vim'
+Plug 'easymotion/vim-easymotion'
 
 " Buffers
 Plug 'kien/ctrlp.vim'
@@ -63,7 +64,7 @@ Plug 'antoyo/vim-licenses'                                                      
 Plug 'scrooloose/syntastic'                                                     " Syntax Checking
 Plug 'SirVer/ultisnips'                                                         " Tab Completion of entities
 " Plug 'honza/vim-snippets'                                                       " Snippets of code
-Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer' }       " Code Completion and Inline errors
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --tern-completer' } " Code Completion
 Plug 'tpope/vim-dispatch'                                                       " Compile Async
 " Plug 'KabbAmine/zeavim.vim'
 Plug 'editorconfig/editorconfig-vim'                                            " Different config for different languages
@@ -92,7 +93,7 @@ Plug 'vim-scripts/css_color'
 Plug 'edsono/vim-matchit'
 
 " JS
-Plug 'marijnh/tern_for_vim' , {'do': 'npm install'}
+" Plug 'marijnh/tern_for_vim' , {'do': 'npm install'}
 Plug 'jelera/vim-javascript-syntax'
 Plug 'pangloss/vim-javascript'
 
@@ -398,8 +399,8 @@ let g:licenses_copyright_holders_name = 'Srijan R Shetty'
 
 " Tern for vim
 """""""""""""""
-let g:tern_map_keys=1
-let g:tern_show_argument_hints='on_hold'
+" let g:tern_map_keys=1
+" let g:tern_show_argument_hints='on_hold'
 
 " Instant markdown
 """"""""""""""""""
