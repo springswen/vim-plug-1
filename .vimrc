@@ -70,7 +70,7 @@ Plug 'tpope/vim-dispatch'                                                       
 Plug 'editorconfig/editorconfig-vim'                                            " Different config for different languages
 
 " UI
-Plug 'bling/vim-airline'
+" Plug 'bling/vim-airline'
 Plug 'flazz/vim-colorschemes'
 Plug 'kyuhi/vim-emoji-complete'
 Plug 'junegunn/vim-emoji'
@@ -93,9 +93,12 @@ Plug 'vim-scripts/css_color'
 Plug 'edsono/vim-matchit'
 
 " JS
-" Plug 'marijnh/tern_for_vim' , {'do': 'npm install'}
+" Plug 'marijnh/tern_for_vim' , {'do': 'npm install'} // Outdated by using YouCompleteMe
 Plug 'jelera/vim-javascript-syntax'
 Plug 'pangloss/vim-javascript'
+Plug 'leafgarland/typescript-vim'
+Plug 'Shougo/vimproc.vim', {'do' : 'make'}
+Plug 'Quramy/tsuquyomi'
 
 "Ledger
 Plug 'ledger/vim-ledger'
@@ -113,7 +116,7 @@ Plug 'tpope/vim-fugitive'
 
 " Miscellaneous Tooling
 Plug 'tmux-plugins/vim-tmux'
-Plug 'neilagabriel/vim-geeknote'
+" Plug 'neilagabriel/vim-geeknote'
 
 " Vim script in python
 " Plug 'amoffat/snake'
@@ -336,7 +339,6 @@ let g:SuperTabDefaultCompletionType="context"
 " Ctrl.P
 """""""""""""
 set runtimepath^=~/.vim/bundle/ctrlp.vim
-let g:ctrlp_map = '<M-e>'
 let g:ctrlp_cmd = 'CtrlP'
 
 " Ctrl P on the top rather than bottom
@@ -362,6 +364,12 @@ nnoremap <leader>o :YcmCompleter GoToDefinition<CR>
 nnoremap <leader>g :YcmDiags<CR>
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_collect_identifiers_from_tags_file = 1
+
+" Typescript support for vim
+if !exists('g:ycm_semantic_triggers')
+ let g:ycm_semantic_triggers = {}
+ endif
+ let g:ycm_semantic_triggers['typescript'] = ['.']
 
 " Emmet
 """""""""""""
@@ -520,6 +528,9 @@ nnoremap <leader>fw :FixWhitespace<CR>
 
 " Sudo this file if opened without root priveileges
 nnoremap <leader>su <Esc>:w !sudo tee % >/dev/null<CR>
+
+" Map file open to F11
+nnoremap <F11> gf
 
 " Miscellaneous
 """"""""""""""""
