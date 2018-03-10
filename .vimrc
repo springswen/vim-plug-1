@@ -227,6 +227,12 @@ nnoremap <C-l> <C-w>l
 nnoremap <C-w>_ :split<CR>
 nnoremap <C-w>\ :vsplit<CR>
 
+" Bindings for buffer movement
+nnoremap <silent> [b :bprevious<CR>
+nnoremap <silent> ]b :bnext<CR>
+nnoremap <silent> [B :bfirst<CR>
+nnoremap <silent> ]B :blast<CR>
+
 " Taken from @Tarrasch's vimrc
 " Edit vimrc
 nnoremap <silent> <leader>ev :e $MYVIMRC<CR>
@@ -242,6 +248,13 @@ nnoremap <leader>q :q!<CR>
 
 " Insert line
 inoremap <C-i> <CR><Esc>O
+
+" In command line mode use <C-p> <C-n> for scroll
+cnoremap <C-p> <Up>
+cnoremap <C-n> <Down>
+
+" Expand to filepath in subdirectory
+cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Files, backups and undo
@@ -283,7 +296,7 @@ set expandtab "Converts tabs into space characters
 set tw=100
 set wrap
 
-" Tab completion
+" Tab completion: mimics the behaviour of zsh
 set wildmenu
 set wildmode=list:longest,full
 
@@ -327,6 +340,10 @@ endif
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugins Specific
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Matchit.vim
+"""""""""""""
+runtime macros/matchit.vim
 
 " Ack
 """""""""""""
