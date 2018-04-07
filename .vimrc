@@ -27,82 +27,58 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 call plug#begin('~/.vim/plugged')
 
-" Vim extensions
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-repeat'
-Plug 'vim-scripts/visualrepeat'
-Plug 'tomtom/tcomment_vim'
+" Experimental
 Plug 'sjl/gundo.vim'
+Plug 'tpope/vim-surround'
 
-" Alignment
-Plug 'bronson/vim-trailing-whitespace'
-Plug 'godlygeek/tabular'
-Plug 'luochen1990/indent-detector.vim'
-
-" Search
-Plug 'junegunn/vim-pseudocl'
-Plug 'junegunn/vim-oblique'
-Plug 'rking/ag.vim'
-Plug 'easymotion/vim-easymotion'
+" Vim extensions
+Plug 'vim-scripts/visualrepeat'                                                 " Visual mode repeat
+Plug 'tpope/vim-repeat'                                                         " Repeat random actions
+Plug 'tomtom/tcomment_vim'                                                      " Toggle comments
+Plug 'Lokaltog/vim-easymotion'                                                  " Easy movement in vim
+Plug 'mileszs/ack.vim'                                                          " Search using Ack
+Plug 'bronson/vim-trailing-whitespace'                                          " Clean trailing whitespace
+Plug 'tpope/vim-fugitive'
 
 " Buffers
-Plug 'kien/ctrlp.vim'
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'kien/ctrlp.vim'                                                           " Fuzzy file search
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }                         " File browser
 
 " Tags
-Plug 'vim-scripts/taglist.vim', { 'on': 'TlistToggle' }
+Plug 'vim-scripts/taglist.vim', { 'on': 'TlistToggle' }                         " Tag browser
 Plug 'xolox/vim-misc'
-Plug 'xolox/vim-easytags', { 'for': ['c', 'c++', 'python', 'javascript'] }
-
-" Motions
-Plug 'Lokaltog/vim-easymotion'
+Plug 'xolox/vim-easytags', { 'for': ['c', 'c++', 'python', 'javascript'] }      " Auto ctags
 
 " Code Related
 Plug 'Raimondi/delimitMate'                                                     " Close matching parenthesis and the like
 Plug 'jeetsukumaran/vim-indentwise'                                             " Move around in indents
-Plug 'antoyo/vim-licenses'                                                      " FOSS Licensse
 Plug 'scrooloose/syntastic'                                                     " Syntax Checking
 Plug 'SirVer/ultisnips'                                                         " Tab Completion of entities
-" Plug 'honza/vim-snippets'                                                       " Snippets of code
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --tern-completer' } " Code Completion
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --js-completer' } " Code Completion
 Plug 'tpope/vim-dispatch'                                                       " Compile Async
-" Plug 'KabbAmine/zeavim.vim'
 Plug 'editorconfig/editorconfig-vim'                                            " Different config for different languages
 
 " UI
-" Plug 'bling/vim-airline'
 Plug 'flazz/vim-colorschemes'
-Plug 'kyuhi/vim-emoji-complete'
-Plug 'junegunn/vim-emoji'
-" Plug 'vim-scripts/vim-webdevicons'
 
 " Python
 Plug 'ivanov/vim-ipython'
-
-" English
-Plug 'tpope/vim-abolish'
 
 " Markdown
 Plug 'vim-pandoc/vim-pantondoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 
 " HTML
-Plug 'mattn/emmet-vim'
 Plug 'vim-scripts/closetag.vim'
 Plug 'vim-scripts/css_color'
-Plug 'edsono/vim-matchit'
+Plug 'vim-scripts/matchit.zip'
 
 " JS
-" Plug 'marijnh/tern_for_vim' , {'do': 'npm install'} // Outdated by using YouCompleteMe
 Plug 'jelera/vim-javascript-syntax'
 Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'Quramy/tsuquyomi'
-
-"Ledger
-Plug 'ledger/vim-ledger'
-Plug 'tpope/vim-speeddating'
 
 " C-family
 Plug 'chazy/cscope_maps'
@@ -111,17 +87,13 @@ Plug 'vim-scripts/IndentWise'
 " Latex
 Plug 'lervag/vimtex'
 
-" Git
-Plug 'tpope/vim-fugitive'
-
 " Miscellaneous Tooling
 Plug 'tmux-plugins/vim-tmux'
-" Plug 'neilagabriel/vim-geeknote'
-
-" Vim script in python
-" Plug 'amoffat/snake'
 
 call plug#end()
+
+" Gundo vim prefer python3
+let g:gundo_prefer_python3 = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
@@ -215,7 +187,7 @@ nnoremap <down> <nop>
 nnoremap <left> <nop>
 nnoremap <right> <nop>
 
-" The annoying jump over lines is removed
+" The annoying jump over wrapped lines is removed
 nnoremap j gj
 nnoremap k gk
 
@@ -233,28 +205,62 @@ nnoremap <silent> ]b :bnext<CR>
 nnoremap <silent> [B :bfirst<CR>
 nnoremap <silent> ]B :blast<CR>
 
+nnoremap <silent> [a :previous<CR>
+nnoremap <silent> ]a :next<CR>
+nnoremap <silent> [A :first<CR>
+nnoremap <silent> ]A :last<CR>
+
+nnoremap <silent> [t :tprevious<CR>
+nnoremap <silent> ]t :tnext<CR>
+nnoremap <silent> [T :tfirst<CR>
+nnoremap <silent> ]T :tlast<CR>
+
 " Taken from @Tarrasch's vimrc
 " Edit vimrc
 nnoremap <silent> <leader>ev :e $MYVIMRC<CR>
 nnoremap <silent> <leader>sv :so $MYVIMRC<CR>
 
-" Quickly change buffers
-nnoremap <C-e> :e#<CR>
-nnoremap <C-(> :bp<CR>
-nnoremap <C-)> :bn<CR>
-
 " Exit
 nnoremap <leader>q :q!<CR>
 
-" Insert line
-inoremap <C-i> <CR><Esc>O
-
-" In command line mode use <C-p> <C-n> for scroll
+" In ex mode use <C-p> <C-n> for scroll
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
 
 " Expand to filepath in subdirectory
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
+
+" For JSON files pretty print them
+nnoremap <leader>pp :%!python -m json.tool<CR>
+
+" For hex Files
+nnoremap <leader>x :%!xxd<CR>
+nnoremap <leader>nx :%!xxd -r<CR>
+
+" for spelling options when writing
+nnoremap <silent> <leader>s :set spell!<CR>
+set spelllang=en_gb
+
+" after a search, this mapping removes the highlighing
+nnoremap <silent> <leader>/ :nohlsearch<CR>
+
+" white spaces
+nnoremap <silent> <leader>w :set list!<CR>
+
+" Highlight the last selected text area
+nnoremap <leader>h '[v']<CR>
+
+" Paste toggle <leader>p
+nnoremap <leader>p :set invpaste paste?<CR>
+
+" Paste from clipboard
+nnoremap <leader>v :set paste<CR>"+p:set nopaste<CR>
+
+" Fixing whitespace
+nnoremap <leader>fw :FixWhitespace<CR>
+
+" Sudo this file if opened without root priveileges
+nnoremap <leader>su <Esc>:w !sudo tee % >/dev/null<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Files, backups and undo
@@ -341,10 +347,6 @@ endif
 " => Plugins Specific
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Matchit.vim
-"""""""""""""
-runtime macros/matchit.vim
-
 " Ack
 """""""""""""
 nnoremap <leader>a :Ag
@@ -410,7 +412,7 @@ nnoremap <C-n> :NERDTreeToggle<CR>
 
 " Taglist
 """""""""""""
-nnoremap <C-t> :TlistToggle<CR>
+nnoremap <M-e> :TlistToggle<CR>
 
 " Ledger
 """"""""
@@ -421,11 +423,6 @@ nnoremap <leader>fd :r !date<CR>
 """""""""""
 let g:licenses_authors_name = 'Srijan R Shetty <srijan.shetty+code@gmail.com>'
 let g:licenses_copyright_holders_name = 'Srijan R Shetty'
-
-" Tern for vim
-"""""""""""""""
-" let g:tern_map_keys=1
-" let g:tern_show_argument_hints='on_hold'
 
 " Instant markdown
 """"""""""""""""""
@@ -450,21 +447,6 @@ nmap ga <Plug>(EasyAlign)
 " let g:easytags_dynamic_files = 2
 " set cpoptions=d
 
-" Tabularize
-""""""""""""
-" Taken from @timpopes gist https://gist.github.com/tpope/287147
-inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
-function! s:align()
-    let p = '^\s*|\s.*\s|\s*$'
-    if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
-        let column = strlen(substitute(getline('.')[0:col('.')],'[^|]','','g'))
-        let position = strlen(matchstr(getline('.')[0:col('.')],'.*|\s*\zs.*'))
-        Tabularize/|/l1
-        normal! 0
-        call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
-    endif
-endfunction
-
 " vimtex
 """""""""
 let g:vimtex_fold_enabled = 0
@@ -483,54 +465,19 @@ au FocusLost * silent! wa
 "=> My precious
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Don't use mkd
-""""""""""""""""
-au! BufRead,BufNewFile *.markdown set filetype=mkd
-au! BufRead,BufNewFile *.md       set filetype=mkd
-
-" File based
-"""""""""""""""
-" For JSON files pretty print them
-nnoremap <leader>pp :%!python -m json.tool<CR>
-
-" For hex Files
-nnoremap <leader>x :%!xxd<CR>
-nnoremap <leader>nx :%!xxd -r<CR>
-
-" for spelling options when writing
-nnoremap <silent> <leader>s :set spell!<CR>
-set spelllang=en_gb
-
-" vim unicode
-if has("multi_byte")
-    if &termencoding == ""
-        let &termencoding = &encoding
+" Tabularize
+" Taken from @timpopes gist https://gist.github.com/tpope/287147
+inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
+function! s:align()
+    let p = '^\s*|\s.*\s|\s*$'
+    if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
+        let column = strlen(substitute(getline('.')[0:col('.')],'[^|]','','g'))
+        let position = strlen(matchstr(getline('.')[0:col('.')],'.*|\s*\zs.*'))
+        Tabularize/|/l1
+        normal! 0
+        call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
     endif
-    set encoding=utf-8
-    setglobal fileencoding=utf-8
-    "setglobal bomb
-    set fileencodings=ucs-bom,utf-8,latin1
-endif
-
-" Utilities
-"""""""""""""""
-" after a search, this mapping removes the highlighing
-nnoremap <silent> <leader>/ :nohlsearch<CR>
-
-" white spaces
-nnoremap <silent> <leader>w :set list!<CR>
-
-" Highlight the last selected text area
-nnoremap <leader>h '[v']<CR>
-
-" Paste toggle <leader>p
-nnoremap <leader>p :set invpaste paste?<CR>
-
-" Paste from clipboard
-nnoremap <leader>v :set paste<CR>"+p:set nopaste<CR>
-
-" Copy block of code to clipboard
-nnoremap <leader>c "+yi{
+endfunction
 
 " Returns true if paste mode is enabled
 function! HasPaste()
@@ -540,25 +487,30 @@ function! HasPaste()
     return ''
 endfunction
 
-" Fixing whitespace
-nnoremap <leader>fw :FixWhitespace<CR>
+" Qargs populates args list with quickfix search list
+command! -nargs=0 -bar Qargs execute 'args' QuickfixFilenames()
+function! QuickfixFilenames()
+  let buffer_numbers = {}
+  for quickfix_item in getqflist()
+    let buffer_numbers[quickfix_item['bufnr']] = bufname(quickfix_item['bufnr'])
+  endfor
+  return join(map(values(buffer_numbers), 'fnameescape(v:val)'))
+endfunction
 
-" Sudo this file if opened without root priveileges
-nnoremap <leader>su <Esc>:w !sudo tee % >/dev/null<CR>
+" Allows to search for visual selection when in visual mode
+xnoremap * :<C-u>call <SID>VSetSearch()<CR>/<C-R>=@/<CR><CR>
+xnoremap # :<C-u>call <SID>VSetSearch()<CR>?<C-R>=@/<CR><CR>
+function! s:VSetSearch()
+ let temp = @s
+ norm! gv"sy
+ let @/ = '\V' . substitute(escape(@s, '/\'), '\n', '\\n', 'g')
+ let @s = temp
+endfunction
 
-" Map file open to F11
-nnoremap <F11> gf
-
-" Miscellaneous
+" Don't use mkd
 """"""""""""""""
-" allows cursor change in tmux mode
-if exists('$TMUX')
-    let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-    let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
-else
-    let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-    let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-endif
+au! BufRead,BufNewFile *.markdown set filetype=mkd
+au! BufRead,BufNewFile *.md       set filetype=mkd
 
 " Autorun Commands
 """""""""""""""""""
@@ -614,11 +566,32 @@ augroup configgroup
     au BufEnter *.vcsh set filetype=dosini
 augroup END
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Miscellaneous
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" allows cursor change in tmux mode
+if exists('$TMUX')
+    let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+    let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+else
+    let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+    let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+endif
+
+" vim unicode
+if has("multi_byte")
+    if &termencoding == ""
+        let &termencoding = &encoding
+    endif
+    set encoding=utf-8
+    setglobal fileencoding=utf-8
+    "setglobal bomb
+    set fileencodings=ucs-bom,utf-8,latin1
+endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Experimental Stuff
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 if has('nvim')
   let g:python_host_prog='/home/srijan/.pyenv/shims/python2.7'
   let g:python3_host_prog='/home/srijan/.pyenv/shims/python3.4'
