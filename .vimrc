@@ -57,6 +57,10 @@ Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --js-comp
 Plug 'tpope/vim-dispatch'                                                       " Compile Async
 Plug 'editorconfig/editorconfig-vim'                                            " Different config for different languages
 
+" Snippets support in vim
+Plug 'SirVer/ultisnips'                                                         " Tab Completion of entities
+Plug 'honza/vim-snippets'                                                       " Snippet package
+
 " UI
 Plug 'flazz/vim-colorschemes'
 
@@ -78,7 +82,6 @@ Plug 'Quramy/tsuquyomi'
 
 " C-family
 Plug 'chazy/cscope_maps'
-Plug 'vim-scripts/IndentWise'
 
 " Latex
 Plug 'lervag/vimtex'
