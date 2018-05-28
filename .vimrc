@@ -53,16 +53,12 @@ Plug 'xolox/vim-easytags', { 'for': ['c', 'c++', 'python', 'javascript'] }      
 Plug 'Raimondi/delimitMate'                                                     " Close matching parenthesis and the like
 Plug 'jeetsukumaran/vim-indentwise'                                             " Move around in indents
 Plug 'scrooloose/syntastic'                                                     " Syntax Checking
-Plug 'SirVer/ultisnips'                                                         " Tab Completion of entities
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --js-completer' } " Code Completion
 Plug 'tpope/vim-dispatch'                                                       " Compile Async
 Plug 'editorconfig/editorconfig-vim'                                            " Different config for different languages
 
 " UI
 Plug 'flazz/vim-colorschemes'
-
-" Python
-Plug 'ivanov/vim-ipython'
 
 " Markdown
 Plug 'vim-pandoc/vim-pantondoc'
@@ -347,10 +343,6 @@ endif
 " => Plugins Specific
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Ack
-"""""""""""""
-nnoremap <leader>a :Ag
-
 " Supertab
 """""""""""""
 let g:SuperTabDefaultCompletionType="context"
@@ -390,22 +382,6 @@ if !exists('g:ycm_semantic_triggers')
  endif
  let g:ycm_semantic_triggers['typescript'] = ['.']
 
-" Emmet
-"""""""""""""
-let g:user_emmet_leader_key='<c-e>'
-let g:user_emmet_install_global = 0
-autocmd FileType html,css EmmetInstall
-
-" Airline
-"""""""""""""
-let g:airline_powerline_fonts = 1
-
-" Fix for gvim
-if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-endif
-let g:airline_symbols.space = "\ua0"
-
 " NERDTree
 """""""""""""
 nnoremap <C-n> :NERDTreeToggle<CR>
@@ -413,16 +389,6 @@ nnoremap <C-n> :NERDTreeToggle<CR>
 " Taglist
 """""""""""""
 nnoremap <M-e> :TlistToggle<CR>
-
-" Ledger
-""""""""
-nnoremap <leader>d :r !date +\%Y-\%m-\%d<CR>
-nnoremap <leader>fd :r !date<CR>
-
-" Licenses
-"""""""""""
-let g:licenses_authors_name = 'Srijan R Shetty <srijan.shetty+code@gmail.com>'
-let g:licenses_copyright_holders_name = 'Srijan R Shetty'
 
 " Instant markdown
 """"""""""""""""""
@@ -432,20 +398,6 @@ let g:instant_markdown_autostart = 0
 " R files
 """"""""""
 let g:syntastic_r_lint_styles = 'list(spacing.indentation.notabs, spacing.indentation.evenindent)'
-
-" Easy align
-""""""""""""
-" Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
-vmap <Enter> <Plug>(EasyAlign)
-
-" Start interactive EasyAlign for a motion/text object (e.g. gaip)
-nmap ga <Plug>(EasyAlign)
-
-" easytags
-""""""""""
-" set tags=./tags;
-" let g:easytags_dynamic_files = 2
-" set cpoptions=d
 
 " vimtex
 """""""""
@@ -552,12 +504,6 @@ augroup configgroup
                 \ if line("'\"") > 0 && line("'\"") <= line("$") |
                 \   exe "normal! g`\"" |
                 \ endif
-
-    " Add license
-    autocmd BufNewFile *.c Mit
-    autocmd BufNewFile *.cpp Mit
-    autocmd BufNewFile *.js Mit
-    autocmd BufNewFile *.py Mit
 
     " Additional Syntax Highlighting
     au BufEnter *.ejs set filetype=html
