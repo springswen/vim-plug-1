@@ -58,7 +58,6 @@ Plug 'tpope/vim-dispatch'                                                       
 Plug 'editorconfig/editorconfig-vim'                                            " Different config for different languages
 
 " Snippets support in vim
-Plug 'SirVer/ultisnips'                                                         " Tab Completion of entities
 Plug 'honza/vim-snippets'                                                       " Snippet package
 
 " UI
@@ -363,14 +362,6 @@ let g:ctrlp_jump_to_buffer = 2 " Jump to tab AND buffer if already open
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
-" Ultisnips
-"""""""""""""
-" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<c-k>"
-let g:UltiSnipsJumpForwardTrigger="<c-)>"
-let g:UltiSnipsJumpBackwardTrigger="<c-(>"
-let g:UltiSnipsEditSplit="vertical"
-
 " YCM
 """""""""""""
 " let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
@@ -384,6 +375,18 @@ if !exists('g:ycm_semantic_triggers')
  let g:ycm_semantic_triggers = {}
  endif
  let g:ycm_semantic_triggers['typescript'] = ['.']
+
+" Syntastic
+"""""""""""""
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
 
 " NERDTree
 """""""""""""
