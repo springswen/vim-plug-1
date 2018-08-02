@@ -305,7 +305,7 @@ set wildmenu
 set wildmode=list:longest,full
 
 " Ignore compiled files
-set wildignore=*.o,*~,*.pyc
+set wildignore=*.o,*~,*.pyc,*.so,*.swp,*.zip,*/tmp/*
 
 " Indentation
 set autoindent "Auto indent
@@ -356,7 +356,7 @@ let g:ctrlp_cmd = 'CtrlP'
 
 " Ctrl P on the top rather than bottom
 let g:ctrlp_match_window_bottom = 0
-let g:ctrlp_working_path_mode = 2 " Smart path mode
+let g:ctrlp_working_path_mode = 'ar' " Smart path mode
 let g:ctrlp_mru_files = 1 " Enable Most Recently Used files feature
 let g:ctrlp_jump_to_buffer = 2 " Jump to tab AND buffer if already open
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
@@ -384,7 +384,7 @@ set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 
 
