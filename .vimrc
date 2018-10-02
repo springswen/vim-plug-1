@@ -30,6 +30,7 @@ call plug#begin('~/.vim/plugged')
 " Experimental
 Plug 'sjl/gundo.vim'
 Plug 'tpope/vim-surround'
+Plug 'vim-airline/vim-airline'
 
 " Vim extensions
 Plug 'vim-scripts/visualrepeat'                                                 " Visual mode repeat
