@@ -198,6 +198,9 @@ nnoremap <C-l> <C-w>l
 nnoremap <C-w>_ :split<CR>
 nnoremap <C-w>\ :vsplit<CR>
 
+" Show all buffers
+nnoremap b :ls<CR>
+
 " Bindings for buffer movement
 nnoremap <silent> [b :bprevious<CR>
 nnoremap <silent> ]b :bnext<CR>
