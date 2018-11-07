@@ -28,7 +28,6 @@ endif
 call plug#begin('~/.vim/plugged')
 
 " Experimental
-Plug 'sjl/gundo.vim'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 
@@ -39,7 +38,6 @@ Plug 'tomtom/tcomment_vim'                                                      
 Plug 'Lokaltog/vim-easymotion'                                                  " Easy movement in vim
 Plug 'mileszs/ack.vim'                                                          " Search using Ack
 Plug 'bronson/vim-trailing-whitespace'                                          " Clean trailing whitespace
-Plug 'tpope/vim-fugitive'
 
 " Buffers
 Plug 'kien/ctrlp.vim'                                                           " Fuzzy file search
@@ -51,10 +49,12 @@ Plug 'xolox/vim-misc'
 Plug 'xolox/vim-easytags', { 'for': ['c', 'c++', 'python', 'javascript'] }      " Auto ctags
 
 " Code Related
+Plug 'tpope/vim-fugitive' 														" Best Git browser
 Plug 'Raimondi/delimitMate'                                                     " Close matching parenthesis and the like
 Plug 'jeetsukumaran/vim-indentwise'                                             " Move around in indents
 Plug 'scrooloose/syntastic'                                                     " Syntax Checking
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --js-completer' } " Code Completion
+" Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --js-completer' } " Code Completion
+Plug 'Valloric/YouCompleteMe'
 Plug 'tpope/vim-dispatch'                                                       " Compile Async
 Plug 'editorconfig/editorconfig-vim'                                            " Different config for different languages
 
