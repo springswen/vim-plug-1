@@ -50,6 +50,7 @@ Plug 'xolox/vim-easytags', { 'for': ['c', 'c++', 'python', 'javascript'] }      
 
 " Code Related
 Plug 'tpope/vim-fugitive' 														" Best Git browser
+Plug 'airblade/vim-gitgutter'                                                   " Gutter for vim
 Plug 'Raimondi/delimitMate'                                                     " Close matching parenthesis and the like
 Plug 'jeetsukumaran/vim-indentwise'                                             " Move around in indents
 Plug 'scrooloose/syntastic'                                                     " Syntax Checking
@@ -57,6 +58,7 @@ Plug 'scrooloose/syntastic'                                                     
 Plug 'Valloric/YouCompleteMe'
 Plug 'tpope/vim-dispatch'                                                       " Compile Async
 Plug 'editorconfig/editorconfig-vim'                                            " Different config for different languages
+Plug 'rking/ag.vim'                                                             " Use ag with vim
 
 " Snippets support in vim
 Plug 'honza/vim-snippets'                                                       " Snippet package
