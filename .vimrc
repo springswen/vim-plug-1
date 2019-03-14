@@ -162,6 +162,9 @@ set incsearch
 " Show matching brackets when text indicator is over them
 set showmatch
 
+" Don't open folds on search
+set fdo-=search
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "=>Fold
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
