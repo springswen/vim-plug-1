@@ -302,8 +302,8 @@ set tabstop=4
 set softtabstop=4
 set expandtab "Converts tabs into space characters
 
-" Textwrap at 80 haracters
-set tw=100
+" Textwrap at 120 haracters
+set tw=120
 set wrap
 
 " Tab completion: mimics the behaviour of zsh
