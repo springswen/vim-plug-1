@@ -269,6 +269,9 @@ nnoremap <leader>fw :FixWhitespace<CR>
 " Sudo this file if opened without root priveileges
 nnoremap <leader>su <Esc>:w !sudo tee % >/dev/null<CR>
 
+" Get the count of a search string
+nnoremap <leader>c <Esc>:%s///gn<CR>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Files, backups and undo
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
